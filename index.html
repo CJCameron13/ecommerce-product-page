@@ -7,6 +7,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <link rel="stylesheet" href="styles.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | E-commerce product page</title>
 
@@ -23,8 +25,26 @@
       <p class="nav-link">Contact</p>
     </nav>
     <div id="account-group">
-      <img src="images/icon-cart.svg" alt="cart">
-      <img src="images/image-avatar.png" alt="profile avatar">
+      <img id="cart-icon" src="images/icon-cart.svg" alt="cart">
+      <img id="avatar" src="images/image-avatar.png" alt="profile avatar">
+      <div id="cart-window" class="hidden">
+        <p id="cart-header">Cart</p>
+        <div id="cart-divider"></div>
+        <div id="empty-cart">
+          <p>Your cart is empty</p>
+        </div>
+        <div id="occupied-cart" class="hidden">
+          <div id="cart-items-container">
+            <img id="cart-thumbnail" src="images/image-product-1-thumbnail.jpg" alt="product thumbnail">
+            <div>
+              <p id="cart-item-name">Fall Limited Edition Sneakers</p>
+              <p>$125.00 x <span id="num-of-items">3</span> <span id="total-price">$375.00</span></p>
+            </div>
+            <img src="images/icon-delete.svg" alt="delete items">
+          </div>
+          <button id="checkout-button">Checkout</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -32,30 +52,38 @@
 
   <div id="main-content">
     <div id="left-content">
-      <img src="images/image-product-1.jpg" alt="product image">
+      <img id="focused-image" src="images/image-product-1.jpg" alt="product image">
       <div id="thumbnail-row">
-        <img src="images/image-product-1-thumbnail.jpg" alt="product thumbnail">
-        <img src="images/image-product-2-thumbnail.jpg" alt="product thumbnail">
-        <img src="images/image-product-3-thumbnail.jpg" alt="product thumbnail">
-        <img src="images/image-product-4-thumbnail.jpg" alt="product thumbnail">
+        <img class="thumbnail" src="images/image-product-1-thumbnail.jpg" alt="product thumbnail">
+        <img class="thumbnail" src="images/image-product-2-thumbnail.jpg" alt="product thumbnail">
+        <img class="thumbnail" src="images/image-product-3-thumbnail.jpg" alt="product thumbnail">
+        <img class="thumbnail" src="images/image-product-4-thumbnail.jpg" alt="product thumbnail">
       </div>
     </div>
     <div id="right-content">
-      <p>Sneaker Company</p>
-      <h1>Fall Limited Edition Sneakers</h1>
-      <p>
+      <div>
+        <p id="mini-header">SNEAKER COMPANY</p>
+        <h1>Fall Limited Edition Sneakers</h1>
+      </div>
+      <p id="description">
         These low-profile sneakers are your perfect casual wear companion. Featuring a
         durable rubber outer sole, they’ll withstand everything the weather can offer.
       </p>
-      <p id="sale-price">$125.00</p>
-      <p id="discount-rate">50%</p>
-      <p id="full-price">$250.00</p>
-      <div id="counter">
-        <img id="minus-icon" class="counter-icon" src="images/icon-minus.svg" alt="minus">
-        <p id="counter-value">0</p>
-        <img id="plus-icon" class="counter-icon" src="images/icon-plus.svg" alt="add">
+      <div>
+        <div id="discounted-group">
+          <p id="sale-price">$125.00</p>
+          <p id="discount-rate">50%</p>
+        </div>
+        <p id="full-price">$250.00</p>
       </div>
-      <button><img src="images/icon-cart.svg" alt=""> Add to cart</button>
+      <div id="cart-form">
+        <div id="counter">
+          <img id="minus-icon" class="counter-icon" src="images/icon-minus.svg" alt="minus">
+          <p id="counter-value">0</p>
+          <img id="plus-icon" class="counter-icon" src="images/icon-plus.svg" alt="add">
+        </div>
+        <button id="place-in-cart-button"><img id="button-icon" src="images/icon-cart.svg" alt=""> Add to cart</button>
+      </div>
     </div>
   </div>
 
