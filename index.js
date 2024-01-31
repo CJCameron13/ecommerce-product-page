@@ -4,6 +4,11 @@ const minus = document.querySelector('#minus-icon')
 const plus = document.querySelector('#plus-icon')
 const counter = document.querySelector('#counter-value')
 const addToCart = document.querySelector('#place-in-cart-button')
+const emptyCart = document.querySelector('#empty-cart')
+const occupiedCart = document.querySelector('#occupied-cart')
+const priceMultiplier = document.querySelector('#num-of-items')
+const totalPrice = document.querySelector('#total-price')
+const itemPrice = 125
 
 cartIcon.addEventListener('click', () => {
     cartWindow.classList.toggle('hidden')
@@ -40,6 +45,25 @@ const pushMultipleTimes = (array, value, times) => {
 const cart = []
 
 addToCart.addEventListener('click', () => {
+    if(numOfItems < 1) {
+        //do nothing
+    } else {
     pushMultipleTimes(cart, 125.00, numOfItems)
     console.log(cart)
+    emptyCart.classList.add('hidden')
+    occupiedCart.classList.remove('hidden')
+    priceMultiplier.textContent = cart.length
+    totalPrice.textContent = `$${cart.length * itemPrice}.00`
+    }
+})
+
+//Empty cart
+const deleteCart = document.querySelector('#delete')
+
+deleteCart.addEventListener('click', () => {
+    cart.length = 0
+    priceMultiplier.textContent = cart.length
+    totalPrice.textContent = `$${cart.length * itemPrice}.00`
+    occupiedCart.classList.add('hidden')
+    emptyCart.classList.remove('hidden')
 })
