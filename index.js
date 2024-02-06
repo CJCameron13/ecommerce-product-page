@@ -9,6 +9,8 @@ const occupiedCart = document.querySelector('#occupied-cart')
 const priceMultiplier = document.querySelector('#num-of-items')
 const totalPrice = document.querySelector('#total-price')
 const itemPrice = 125
+const bubbleNumber = document.querySelector('#bubble-number')
+const countBubble = document.querySelector('#count-bubble')
 
 cartIcon.addEventListener('click', () => {
     cartWindow.classList.toggle('hidden')
@@ -54,6 +56,8 @@ addToCart.addEventListener('click', () => {
     occupiedCart.classList.remove('hidden')
     priceMultiplier.textContent = cart.length
     totalPrice.textContent = `$${cart.length * itemPrice}.00`
+    countBubble.classList.remove('hidden')
+    bubbleNumber.textContent = cart.length
     }
 })
 
@@ -66,4 +70,20 @@ deleteCart.addEventListener('click', () => {
     totalPrice.textContent = `$${cart.length * itemPrice}.00`
     occupiedCart.classList.add('hidden')
     emptyCart.classList.remove('hidden')
+    bubbleNumber.textContent = cart.length
+    countBubble.classList.add('hidden')
+})
+
+//Image feature
+
+const productThumbnails = document.querySelectorAll('.thumbnail')
+const focusedImage = document.querySelector('#focused-image')
+
+productThumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', event => {
+        console.log(event.currentTarget)
+        let current = document.querySelector('.thumbnail.active')
+        current?.classList.remove('active')
+        event.currentTarget.classList.add('active')
+    })
 })
