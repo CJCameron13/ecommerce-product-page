@@ -276,3 +276,37 @@ button:active {
 .hidden {
     display: none;
 }
+
+#zoom-overlay {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: var(--transparent-black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5vh;
+}
+
+#zoom-feature-image {
+    width: 500px;
+    border-radius: 10px;
+}
+
+#zoom-thumbnail-row {
+    display: flex;
+    justify-content: space-between;
+    width: 550px;
+}
+
+.zoom-thumbnail {
+    width: 115px;
+    border-radius: 10px;
+}
+
+#zoom-overlay.hidden {
+    display: none;
+}
