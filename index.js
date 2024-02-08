@@ -78,12 +78,39 @@ deleteCart.addEventListener('click', () => {
 
 const productThumbnails = document.querySelectorAll('.thumbnail')
 const focusedImage = document.querySelector('#focused-image')
+const srcArray = ['images/image-product-1.jpg', 'images/image-product-2.jpg', 'images/image-product-3.jpg', 'images/image-product-4.jpg']
+const thumbnailSrcArray = ['http://127.0.0.1:5500/ecommerce-product-page-main/images/image-product-1-thumbnail.jpg', 'http://127.0.0.1:5500/ecommerce-product-page-main/images/image-product-2-thumbnail.jpg', 'http://127.0.0.1:5500/ecommerce-product-page-main/images/image-product-3-thumbnail.jpg', 'http://127.0.0.1:5500/ecommerce-product-page-main/images/image-product-4-thumbnail.jpg']
+
+
+let selectFeature = (active) => {
+    if(active.src === thumbnailSrcArray[0]) {
+        focusedImage.src = srcArray[0]
+    } else if (active.src === thumbnailSrcArray[1]) {
+        focusedImage.src = srcArray[1]
+    } else if (active.src === thumbnailSrcArray[2]) {
+        focusedImage.src = srcArray[2]
+    } else {
+        focusedImage.src = srcArray[3]
+    }
+}
 
 productThumbnails.forEach(thumbnail => {
     thumbnail.addEventListener('click', event => {
-        console.log(event.currentTarget)
+        //console.log(event.currentTarget)
         let current = document.querySelector('.thumbnail.active')
         current?.classList.remove('active')
         event.currentTarget.classList.add('active')
+        current = document.querySelector('.thumbnail.active') //repeated to grab source from img that is currently active
+        //console.log(current.src)
+        selectFeature(current)
     })
+})
+
+//Zoom functions
+
+const featuredImage = document.querySelector('#focused-image')
+const zoomOverlay = document.querySelector('#zoom-overlay')
+
+focusedImage.addEventListener('click', () => {
+    zoomOverlay.classList.remove('hidden')
 })
