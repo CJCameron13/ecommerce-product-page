@@ -23,13 +23,25 @@ body {
 #top-bar {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 5vh;
+    /* margin-bottom: 5vh; */
 }
 
 nav {
     display: flex;
     align-items: center;
     gap: 30px;
+}
+
+.nav-link {
+    color:var(--dark-grayish-blue);
+    height: 50px;
+    margin-top: 30px;
+}
+
+.nav-link:hover {
+    color: black;
+    cursor: pointer;
+    border-bottom: 2px solid var(--orange);
 }
 
 #account-group {
@@ -158,6 +170,10 @@ nav {
     width: 450px;
     border-radius: 10px;
     margin-bottom: 25px;
+}
+
+#focused-image:hover {
+    cursor: pointer;
 }
 
 #thumbnail-row {
@@ -291,8 +307,23 @@ button:active {
     gap: 5vh;
 }
 
+#close-container {
+    background-color: var(--white);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+#close-container:hover {
+    cursor: pointer;
+    opacity: 50%;
+}
+
 #zoom-feature-image {
-    width: 500px;
+    width: 650px;
     border-radius: 10px;
 }
 
