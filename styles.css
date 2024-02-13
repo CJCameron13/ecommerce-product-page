@@ -167,7 +167,7 @@ nav {
 }
 
 #focused-image {
-    width: 450px;
+    height: 50vh;
     border-radius: 10px;
     margin-bottom: 25px;
 }
@@ -182,7 +182,7 @@ nav {
 }
 
 .thumbnail {
-    width: 100px;
+    height: 11vh;
     border-radius: 10px;
 }
 
@@ -296,7 +296,7 @@ button:active {
 #zoom-overlay {
     position: absolute;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     top: 0;
     left: 0;
     background-color: var(--transparent-black);
@@ -322,14 +322,39 @@ button:active {
     opacity: 50%;
 }
 
+#zoom-feature-container {
+    position: relative;
+}
+
+#nav-arrows {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 110%;
+    margin-top: 45%;
+    margin-left: -5%;
+}
+
+.arrow {
+    background-color: var(--white);
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #zoom-feature-image {
-    width: 650px;
+    height: 70vh;
+    /* width: 650px; */
     border-radius: 10px;
 }
 
 #zoom-thumbnail-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 5vw;
     width: 550px;
 }
 
